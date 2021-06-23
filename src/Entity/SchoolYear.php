@@ -12,6 +12,7 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class SchoolYear
 {
+    const DEFAULT_INTERVAL = 'P4M';
     /**
      * @ORM\Id
      * @ORM\GeneratedValue
@@ -51,6 +52,12 @@ class SchoolYear
 
     public function __construct()
     {
+        $this->startDate = new \DateTime();
+        $this->endDate = \DateTime::createFromFormat(
+            'Y-m-d H:i:s', 
+            $this->startDate->format('Y-m-d H:i:s')
+        );
+        $this->endDate->add(new \DateInterval(self::DEFAULT_INTERVAL));
         $this->students = new ArrayCollection();
         $this->teachers = new ArrayCollection();
     }

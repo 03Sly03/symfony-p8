@@ -5,5 +5,15 @@ $primary: darken(#7b8abd, 20%);
 @import "~bootstrap/scss/bootstrap";
 
 body {
-    background-color: lightgreen;
+    background-color: black;
+    color: lightgrey;
+}
+
+.table {
+    color: inherit;
+}
+
+h1 {
+    text-align: center;
+    margin: 40px;
 }
