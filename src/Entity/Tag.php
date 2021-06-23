@@ -11,6 +11,7 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
  * @ORM\Entity(repositoryClass=TagRepository::class)
+ * @UniqueEntity("name")
  */
 class Tag
 {
@@ -23,7 +24,6 @@ class Tag
 
     /**
      * @ORM\Column(type="string", length=190)
-     * @UniqueEntity("name")
      */
     private $name;
 
